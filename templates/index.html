@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+<style>
+    .fr {
+        text-align: center;
+    }
+
+    .main {
+        text-align: center;
+        margin-top: 60px;
+        color: red;
+    }
+
+    .main-form {
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-bottom: 200px;
+        margin-top: 40px;
+    }
+
+    .bg-container {
+        background-image: url("https://knowlaw.in/wp-content/uploads/2020/07/Handcuffed-Man.jpg");
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .tag {
+        color: red;
+    }
+
+    .bt {
+        border-style: none;
+        border-radius: 2px;
+        padding: 5px;
+        color: white;
+    }
+    
+    
+</style>
+
+<body class='bg-container'>
+    <div>
+
+        <h1 class='main'> Total Crimes Prediction </h1>
+
+        <div class='main-form'>
+            <form action="/predict" method="POST">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="lab" style="color: yellow;">Select State:</label>
+                        <select name="state" class="form-control" id="state">
+                        <option value="">--select--</option>
+                        <option value="0">Andaman and Nicobar Islands</option>
+                        <option value="1">Andhra Pradesh</option>
+                        <option value="2">Arunachal Pradesh</option>
+                        <option value="3">Assam</option>
+                        <option value="4">Bihar</option>
+                        <option value="5">Chandigarh</option>
+                        <option value="6">Chhattisgarh</option>
+                        <option value="7">Dadra and Nagar Haveli</option>
+                        <option value="8">Daman and Diu</option>
+                        <option value="9">Delhi</option>
+                        <option value="10">Goa</option>
+                        <option value="11">Gujarat</option>
+                        <option value="12">Haryana</option>
+                        <option value="13">Himachal Pradesh</option>
+                        <option value="14">Jammu and Kashmir</option>
+                        <option value="15">Jharkhand</option>
+                        <option value="16">Karnataka</option>
+                        <option value="17">Kerala</option>
+                        <option value="18">Lakshadweep</option>
+                        <option value="19">Madhya Pradesh</option>
+                        <option value="20">Maharashtra</option>
+                        <option value="21">Manipur</option>
+                        <option value="22">Meghalaya</option>
+                        <option value="23">Mizoram</option>
+                        <option value="24">Nagaland</option>
+                        <option value="25">Odisha</option>
+                        <option value="26">Puducherry</option>
+                        <option value="27">Punjab</option>
+                        <option value="28">Rajasthan</option>
+                        <option value="29">Sikkim</option>
+                        <option value="30">Tamil Nadu</option>
+                        <option value="31">Telangana</option>
+                        <option value="32">Tripura</option>
+                        <option value="33">Uttar Pradesh</option>
+                        <option value="34">Uttarakhand</option>
+                        <option value="35">West Bengal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2" class="lab" style="color: yellow;">Select Distict:</label>
+                    <select name="district" class="form-control" id="district">
+                        <option value="">--select--</option>
+                        <option value="0">Adilabad</option>
+                        <option value="1">Bhadradri Kothagudem</option>
+                        <option value="2">Hanumakonda</option>
+                        <option value="3">Hyderabad</option>
+                        <option value="4">Jagtial</option>
+                        <option value="5">Jangaon</option>
+                        <option value="6">Jayashankar Bhupalpally</option>
+                        <option value="7">Kamareddy</option>
+                        <option value="8">Karimnagar</option>
+                        <option value="9">Khammam</option>
+                        <option value="10">Komaram Bheem Asifabad</option>
+                        <option value="11">Mahabubabad</option>
+                        <option value="12">Mahabubnagar</option>
+                        <option value="13">Mancherial</option>
+                        <option value="14">Medak</option>
+                        <option value="15">Medchal–Malkajgiri</option>
+                        <option value="16">Mulugu</option>
+                        <option value="17">Nalgonda</option>
+                        <option value="18">Narayanpet</option>
+                        <option value="19">Nizamabad</option>
+                        <option value="20">Peddapalli</option>
+                        <option value="21">Rajanna Sircilla</option>
+                        <option value="22">Rangareddy</option>
+                        <option value="23">Sangareddy</option>
+                        <option value="24">Siddipet</option>
+                        <option value="25">Suryapeta</option>
+                        <option value="26">Vikarabad</option>
+                        <option value="27">Wanaparthy</option>
+                        <option value="28">Warangal (Rural)</option>
+                        <option value="29">Warangal (Urban)</option>
+                        <option value="30">Anantapur</option>
+                        <option value="31">Chittoor</option>
+                        <option value="32">East Godavari</option>
+                        <option value="33">Guntur</option>
+                        <option value="34">Krishna</option>
+                        <option value="35">Kurnool</option>
+                        <option value="36">Nellore</option>
+                        <option value="37">Prakasam</option>
+                        <option value="38">Srikakulam</option>
+                        <option value="39">Visakhapatnam</option>
+                        <option value="40">Vizianagaram</option>
+                        <option value="41">Alluri Sitarama Raju</option>
+                        <option value="42">Anakapalle</option>
+                        <option value="43">Eluru</option>
+                        <option value="44">Konaseema</option>
+                        <option value="45">Nandyal</option>
+                        <option value="46">NTR</option>
+                        <option value="47">Palnadu</option>
+                        <option value="48">Sri Potti Sriramulu Nellore</option>
+                        <option value="49">SPSR Nellore</option>
+                        <option value="50">Tirupati</option>
+                        <option value="51">Ushkoday</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput7" class="lab" style="color: yellow;">Enter Year:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput7" name='year'
+                        placeholder="Enter a value:">
+                </div>
+                <div class="text-center">
+                    <button class='bg-success text-center bt' type='submit'> SUBMIT </button>
+                </div>
+                
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>  
